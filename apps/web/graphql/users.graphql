@@ -1,5 +1,9 @@
-query getAllUsersId {
-  users {
+mutation updateUserData($id: uuid!, $user: users_set_input) {
+  updateUser(pk_columns: { id: $id }, _set: $user) {
     id
+    displayName
+    email
+    avatarUrl
+    metadata
   }
 }

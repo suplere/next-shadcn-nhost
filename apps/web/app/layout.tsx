@@ -1,4 +1,5 @@
 import "ui/styles/globals.css";
+import { Toaster } from "@ui/components/sonner";
 
 export default function RootLayout({
   children,
@@ -7,7 +8,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body><div className="m-4">{children}</div></body>
+      <body>
+        <div className="m-4">{children}</div>
+        <Toaster />
+      </body>
     </html>
   );
 }
