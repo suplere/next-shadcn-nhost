@@ -1,6 +1,6 @@
 'use server'
 
-import { NHOST_SESSION_KEY, getNhost } from '@lib/nhost/nhost'
+import { NHOST_SESSION_KEY, getNhost } from '@/lib/nhost/nhost'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 

@@ -1,7 +1,7 @@
 'use server'
 
-import { NHOST_SESSION_KEY, getNhost } from '@lib/nhost/nhost'
-import { utoa } from '@utils/string'
+import { NHOST_SESSION_KEY, getNhost } from '@/lib/nhost/nhost'
+import { utoa } from '@/utils/string'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 

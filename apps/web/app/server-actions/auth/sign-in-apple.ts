@@ -1,6 +1,6 @@
 'use server'
 
-import { getNhost } from '@lib/nhost/nhost'
+import { getNhost } from '@/lib/nhost/nhost'
 import { redirect } from 'next/navigation'
 
 export const signInWithApple = async () => {

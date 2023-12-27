@@ -1,4 +1,4 @@
-import { utoa, utob } from '@utils/string';
+import { utoa, utob } from '@/utils/string';
 import { getNhostConfig } from './helpers';
 import { AuthErrorPayload, NhostClient, NhostSession } from '@nhost/nhost-js'
 import { cookies } from 'next/headers'
