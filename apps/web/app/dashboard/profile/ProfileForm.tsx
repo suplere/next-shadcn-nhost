@@ -15,7 +15,7 @@ import {
 import { Input } from "@ui/components/input";
 import { Button } from "@ui/components/button";
 import { UserMetatdata } from "@/types";
-import { updateUser } from "../server-actions/user";
+import { updateUser } from "../../server-actions/user";
 import { NHostAvatarEdit } from "@/components/nhost/NHostAvatarEdit";
 import dayjs from "@/lib/dayjs";
 import { toast } from "sonner"

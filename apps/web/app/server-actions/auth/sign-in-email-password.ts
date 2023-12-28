@@ -8,14 +8,14 @@ import { redirect } from 'next/navigation'
 export const signIn = async (formData: FormData) => {
   const nhost = await getNhost()
 
-  const email = formData.get('email') as string
-  const password = formData.get('password') as string
+  const email = formData.get('email').toString()
+  const password = formData.get('password').toString()
 
   const { session, error } = await nhost.auth.signIn({ email, password })
 
   if (session) {
     cookies().set(NHOST_SESSION_KEY, utoa(JSON.stringify(session)), { path: '/' })
-    redirect('/protected/todos')
+    redirect('/dashboard')
   }
 
   if (error) {

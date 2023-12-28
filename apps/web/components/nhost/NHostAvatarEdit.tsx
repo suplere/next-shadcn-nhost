@@ -87,10 +87,11 @@ export const NHostAvatarEdit = forwardRef(function NHostAvatarEdit(
           height={48}
           className="inline-block h-12 w-12 rounded-full border"
         />
-        <div className="ml-4 flex">
-          <div className="border-gray-300 focus-within:ring-offset-blue-gray-50 hover:bg-blue-gray-50 relative flex cursor-pointer items-center rounded-md border bg-white py-2 px-3 shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2">
+        <div className="ml-4 flex items-center gap-2">
+          <div className="border-gray-300 focus-within:ring-offset-blue-gray-50 hover:bg-blue-gray-50 relative flex cursor-pointer items-center justify-center gap-2 rounded-md border bg-white dark:bg-black py-2 px-3 shadow-sm focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2">
             <Label
               htmlFor="user-photo"
+              className="hidden sm:block"
               // className="text-gray-900 pointer-events-none relative text-sm font-medium"
             >
               <span>Změnit</span>
@@ -107,7 +108,7 @@ export const NHostAvatarEdit = forwardRef(function NHostAvatarEdit(
           <Button
             onClick={onDeleteAvatar}
             type="button"
-            className="text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:ring-offset-blue-gray-50 ml-3 rounded-md border border-transparent bg-transparent py-2 px-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            // className="text-blue-gray-900 hover:text-blue-gray-700 focus:border-blue-gray-300 focus:ring-offset-blue-gray-50 ml-3 rounded-md border border-transparent bg-transparent py-2 px-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           >
             Odstranit
           </Button>

@@ -11,5 +11,5 @@ export const signOut = async () => {
 
   cookies().delete(NHOST_SESSION_KEY)
 
-  redirect('/auth/sign-in')
+  redirect('/login')
 }

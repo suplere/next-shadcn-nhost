@@ -12,7 +12,7 @@ const Profile = async () => {
   const { firstname, lastname, mobile } = session.user
     .metadata as UserMetatdata;
   return (
-    <div className="flex flex-col max-w-3xl mx-auto space-y-4">
+    <div className="flex flex-col max-w-3xl mx-auto space-y-4 mx-4">
       <h2 className="text-xl">Profil</h2>
       <ProfileForm
         accountCreated={session.user.createdAt}
