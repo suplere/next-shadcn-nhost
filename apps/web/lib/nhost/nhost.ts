@@ -7,6 +7,7 @@ import { cookies } from 'next/headers'
 import { NextRequest, NextResponse } from 'next/server'
 import { type StateFrom } from 'xstate/lib/types'
 import { waitFor } from 'xstate/lib/waitFor'
+import { MAX_AGE } from '@/utils/constants';
 
 export const NHOST_SESSION_KEY = 'nhostSession'
 
@@ -54,7 +55,7 @@ export const manageAuthSession = async (
     // overwrite the session cookie with the new session
     return NextResponse.redirect(url, {
       headers: {
-        'Set-Cookie': `${NHOST_SESSION_KEY}=${utoa(JSON.stringify(newSession))}; Path=/`
+        'Set-Cookie': `${NHOST_SESSION_KEY}=${utoa(JSON.stringify(newSession))}; Path=/; Max-Age=${MAX_AGE}`
       }
     })
   }
