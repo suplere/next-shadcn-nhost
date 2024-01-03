@@ -1,18 +1,21 @@
 "use client";
 import React from "react";
 import { useForm } from "react-hook-form";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@ui/components/form";
-import { Input } from "@ui/components/input";
-import { Button } from "@ui/components/button";
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@ui/components/ui/form";
+import { Input } from "@ui/components/ui/input";
+import { Button } from "@ui/components/ui/button";
 import * as z from "zod";
 import { forgotPassword } from "@/app/server-actions/auth";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { toast } from "sonner"
+import { useRouter } from "next/navigation";
 
 const forgotPasswordSchema = z.object({
   email: z.string().min(1, "Email je povinná hodnota").email("Nesprávný formát emailu.")
 })
 
 export const ForgotPasswordForm = () => {
+  const router = useRouter()
   const forgotForm = useForm<z.infer<typeof forgotPasswordSchema>>({
     resolver: zodResolver(forgotPasswordSchema),
     defaultValues: {
@@ -25,6 +28,10 @@ export const ForgotPasswordForm = () => {
     const response = await forgotPassword(form);
     if (response?.error) {
       console.error(response.error);
+      toast.error(response.error)
+    } else {
+      toast.success("Zkontrolujte si emailovou schránku. Najdete tam odkaz na změnu hesla.")
+      router.push("/")
     }
   });
   return (

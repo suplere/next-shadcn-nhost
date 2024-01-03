@@ -8,11 +8,11 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@ui/components/dropdown-menu";
+} from "@ui/components/ui/dropdown-menu";
 import { Button } from "@ui/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@ui/components/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@ui/components/ui/avatar";
 import Link from "next/link";
-import { LogOut, UserCog } from "lucide-react";
+import { Icons } from "@ui/components/icons"
 import { signOut } from "../server-actions/auth";
 
 export function UserNav({ userData }: { userData: User }) {
@@ -43,7 +43,7 @@ export function UserNav({ userData }: { userData: User }) {
         <DropdownMenuGroup>
           <DropdownMenuItem asChild>
             <Link href="/dashboard/profile" scroll>
-              <UserCog className="mr-2 h-4 w-4" />
+              <Icons.profile className="mr-2 h-4 w-4" />
               <span>Profil</span>
             </Link>
           </DropdownMenuItem>
@@ -56,7 +56,7 @@ export function UserNav({ userData }: { userData: User }) {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem onClick={() => signOut()}>
-          <LogOut className="mr-2 h-4 w-4" />
+          <Icons.logout className="mr-2 h-4 w-4" />
           <span>Odhlásit</span>
         </DropdownMenuItem>
       </DropdownMenuContent>

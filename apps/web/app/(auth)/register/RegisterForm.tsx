@@ -9,12 +9,14 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@ui/components/form";
-import { Button } from "@ui/components/button";
-import { Input } from "@ui/components/input";
+} from "@ui/components/ui/form";
+import { Button } from "@ui/components/ui/button";
+import { Input } from "@ui/components/ui/input";
 import InputMask, { Props } from "react-input-mask";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signUp } from "@/app/server-actions/auth";
+import { toast } from "sonner";
+import { useRouter } from "next/navigation";
 
 const registerFormSchema = z
   .object({
@@ -36,6 +38,7 @@ const registerFormSchema = z
   });
 
 export const RegisterForm = () => {
+  const router = useRouter();
   const registerForm = useForm<z.infer<typeof registerFormSchema>>({
     resolver: zodResolver(registerFormSchema),
     defaultValues: {
@@ -44,20 +47,25 @@ export const RegisterForm = () => {
       firstname: "",
       lastname: "",
       confirm: "",
-      mobile: ""
+      mobile: "",
     },
   });
   const action: () => void = registerForm.handleSubmit(async (data) => {
     // console.log("DATA", data)
-    const form = new FormData()
-    form.append('firstName', data.firstname)
-    form.append('lastName', data.lastname)
-    form.append('email', data.email)
-    form.append('password', data.password)
+    const form = new FormData();
+    form.append("firstName", data.firstname);
+    form.append("lastName", data.lastname);
+    form.append("email", data.email);
+    form.append("password", data.password);
+    form.append("mobile", data.mobile)
 
     const response = await signUp(form);
     if (response?.error) {
       console.error(response.error);
+      toast.error(response.error);
+    } else {
+      toast.success("Účet byl vytvořen. Je třeba potvrdit email.");
+      router.push("/");
     }
   });
   return (
@@ -138,7 +146,7 @@ export const RegisterForm = () => {
                 <InputMask
                   {...field}
                   mask={"+420 999 999 999"}
-                  className="form-input focus:ring-offset-2 focus:ring-2 border-gray-200 focus:ring-black focus:border-black dark:border-gray-800 text-gray-900 mt-1 block w-full rounded-md shadow-sm bg-background dark:text-gray-100 dark:focus:border-white text-sm"
+                  className="form-input p-2 focus:ring-offset-2 focus:ring-2 border-gray-200 focus:ring-black focus:border-black dark:border-gray-800 text-gray-900 mt-1 block w-full rounded-md shadow-sm bg-background dark:text-gray-100 dark:focus:border-white text-sm"
                   type="text"
                 ></InputMask>
               </FormControl>

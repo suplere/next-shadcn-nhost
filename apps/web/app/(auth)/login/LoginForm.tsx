@@ -9,10 +9,10 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@ui/components/form";
+} from "@ui/components/ui/form";
 import * as z from "zod";
-import { Input } from "@ui/components/input";
-import { Button } from "@ui/components/button";
+import { Input } from "@ui/components/ui/input";
+import { Button } from "@ui/components/ui/button";
 import { toast } from "sonner";
 import { signIn } from "@/app/server-actions/auth";
 

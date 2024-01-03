@@ -2,9 +2,9 @@
 import { ChangeEvent, ForwardedRef, forwardRef, useEffect, useState } from "react"
 import Image from "next/image"
 import { fromImage } from "imtool"
-import { Label } from "@ui/components/label"
-import { Input } from "@ui/components/input"
-import { Button } from "@ui/components/button"
+import { Label } from "@ui/components/ui/label"
+import { Input } from "@ui/components/ui/input"
+import { Button } from "@ui/components/ui/button"
 import { deleteAvatar, uploadAvatar } from "@/app/server-actions/user"
 
 export type AvatarEditProps = {

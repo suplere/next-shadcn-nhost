@@ -1,17 +1,13 @@
 import "ui/styles/globals.css";
-import { Toaster } from "@ui/components/sonner";
-import type { Metadata } from "next";
+import { Toaster } from "@ui/components/ui/sonner";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import { Inter as FontSans } from "next/font/google";
 import { cn } from "@ui/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/config/site";
 
 const inter = Inter({ subsets: ["latin"] });
-
-const APP_NAME = "Template";
-const APP_DESCRIPTION = "Webové stránky Template";
-const APP_DEFAULT_TITLE = "Template";
-const APP_TITLE_TEMPLATE = "%s - Template";
 
 export const fontSans = FontSans({
   subsets: ["latin"],
@@ -19,41 +15,63 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL(siteConfig.url.base),
   title: {
-    default: APP_NAME,
-    template: APP_TITLE_TEMPLATE,
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
   },
-  description: APP_DESCRIPTION,
+  description: siteConfig.description,
+  keywords: siteConfig.keywords,
+  authors: [
+    {
+      name: siteConfig.author,
+      url: siteConfig.url.author,
+    },
+  ],
+  creator: siteConfig.author,
   // manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: APP_DEFAULT_TITLE,
-    // startUpImage: [],
+    title: siteConfig.name,
   },
   formatDetection: {
     telephone: false,
   },
   openGraph: {
     type: "website",
-    siteName: APP_NAME,
-    images: "/og-image.png",
-    title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE,
-    },
-    description: APP_DESCRIPTION,
+    locale: "cs_CZ",
+    url: siteConfig.url.base,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: siteConfig.ogImage,
+        width: 1200,
+        height: 630,
+        alt: siteConfig.name,
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: {
-      default: APP_DEFAULT_TITLE,
-      template: APP_TITLE_TEMPLATE,
-    },
-    description: APP_DESCRIPTION,
+    card: "summary_large_image",
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.ogImage],
+    creator: "@_suplere",
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 };
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "white" },
+    { media: "(prefers-color-scheme: dark)", color: "black" },
+  ],
+}
 
 export default function RootLayout({
   children,

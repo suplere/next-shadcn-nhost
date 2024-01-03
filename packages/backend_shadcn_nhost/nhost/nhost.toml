@@ -33,6 +33,7 @@ version = '0.23.0'
 
 [auth.redirections]
 clientUrl = 'http://localhost:3000'
+allowedUrls = ['http://localhost:3000']
 
 [auth.signUp]
 enabled = true
@@ -44,8 +45,8 @@ default = 'user'
 allowed = ['user', 'me']
 
 [auth.user.locale]
-default = 'en'
-allowed = ['en']
+default = 'cs'
+allowed = ['en', 'cs']
 
 [auth.user.gravatar]
 enabled = true

@@ -11,14 +11,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@ui/components/form";
-import { Input } from "@ui/components/input";
-import { Button } from "@ui/components/button";
+} from "@ui/components/ui/form";
+import { Input } from "@ui/components/ui/input";
+import { Button } from "@ui/components/ui/button";
 import { UserMetatdata } from "@/types";
 import { updateUser } from "../../server-actions/user";
 import { NHostAvatarEdit } from "@/components/nhost/NHostAvatarEdit";
 import dayjs from "@/lib/dayjs";
 import { toast } from "sonner"
+import { useRouter } from "next/navigation";
 
 export const profileForm = z.object({
   firstname: z.string().min(1, "Jméno je povinná položka."),
@@ -40,6 +41,7 @@ export const ProfileForm = ({
   accountCreated: string;
   id: string
 }) => {
+  const router = useRouter()
   const form = useForm<z.infer<typeof profileForm>>({
     resolver: zodResolver(profileForm),
     defaultValues: {
@@ -67,6 +69,7 @@ export const ProfileForm = ({
     })
     if (res.result) {
       toast.success(res.message)
+      router.push("/dashboard")
     } else {
       toast.error(res.message)
     }

@@ -1,6 +1,7 @@
 'use server'
 
 import { NHOST_SESSION_KEY, getNhost } from '@/lib/nhost/nhost'
+import { UserMetatdata } from '@/types'
 import { DEFAULT_COOKIE_OPTIONS } from '@/utils/constants'
 import { utoa } from '@/utils/string'
 import { cookies } from 'next/headers'
@@ -13,12 +14,21 @@ export const signUp = async (formData: FormData) => {
   const lastName = formData.get('lastName') as string
   const email = formData.get('email') as string
   const password = formData.get('password') as string
+  const mobile = formData.get('mobile') as string
+
+  const metadata: UserMetatdata = {
+    firstname: firstName,
+    lastname: lastName,
+    mobile: mobile
+  }
 
   const { session, error } = await nhost.auth.signUp({
     email,
     password,
     options: {
-      displayName: `${firstName} ${lastName}`
+      locale: "cs",
+      displayName: `${firstName} ${lastName}`,
+      metadata
     }
   })
 

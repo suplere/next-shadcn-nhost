@@ -115,7 +115,7 @@ export const updateUser = async ({
     }
     return {
       result: false,
-      message: "Došlo k chybě.",
+      message: `Došlo k chybě. - ${JSON.stringify(res.error)}`,
     };
   } catch (error) {
     return {
