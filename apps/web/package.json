@@ -11,6 +11,9 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.3",
     "@nhost/nhost-js": "3.0.1",
+    "@serwist/next": "^8.4.3",
+    "@serwist/precaching": "^8.4.3",
+    "@serwist/sw": "^8.4.3",
     "@t3-oss/env-nextjs": "^0.7.1",
     "dayjs": "1.11.10",
     "imtool": "^1.2.1",
@@ -20,6 +23,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.49.2",
     "react-input-mask": "^2.0.4",
+    "react-onesignal": "^3.0.1",
     "sonner": "^1.3.1",
     "ui": "workspace:*",
     "xstate": "^4.38.2",

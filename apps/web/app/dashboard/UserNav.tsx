@@ -47,6 +47,12 @@ export function UserNav({ userData }: { userData: User }) {
               <span>Profil</span>
             </Link>
           </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/onesignal" scroll>
+              <Icons.onesignal className="mr-2 h-4 w-4" />
+              <span>Onesignal test</span>
+            </Link>
+          </DropdownMenuItem>
           {/* <DropdownMenuItem asChild>
             <Link href="/dashboard/settings" scroll>
               <BellRing className="mr-2 h-4 w-4" />

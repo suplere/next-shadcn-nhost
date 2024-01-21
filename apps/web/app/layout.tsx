@@ -6,6 +6,7 @@ import { Inter as FontSans } from "next/font/google";
 import { cn } from "@ui/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
+import { OneSignalProvider } from "./onesignal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,6 +16,7 @@ export const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
+  applicationName: siteConfig.name,
   metadataBase: new URL(siteConfig.url.base),
   title: {
     default: siteConfig.name,
@@ -62,8 +64,10 @@ export const metadata: Metadata = {
     creator: "@_suplere",
   },
   icons: {
-    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
   },
+  manifest: "/manifest.json",
 };
 
 export const viewport: Viewport = {
@@ -71,7 +75,7 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
-}
+};
 
 export default function RootLayout({
   children,
@@ -88,15 +92,17 @@ export default function RootLayout({
         )}
         suppressHydrationWarning={true}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="">{children}</div>
-          <Toaster />
-        </ThemeProvider>
+        <OneSignalProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <div className="">{children}</div>
+            <Toaster />
+          </ThemeProvider>
+        </OneSignalProvider>
       </body>
     </html>
   );
