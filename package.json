@@ -20,7 +20,7 @@
     "@graphql-codegen/client-preset": "^4.0.1",
     "@parcel/watcher": "^2.3.0",
     "eslint": "8.56.0",
-    "eslint-plugin-turbo": "1.11.2",
+    "eslint-plugin-turbo": "1.11.3",
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
     "prettier": "latest",
