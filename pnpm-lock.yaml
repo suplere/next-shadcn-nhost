@@ -63,8 +63,8 @@ importers:
         specifier: ^3.3.3
         version: 3.3.3(react-hook-form@7.49.2)
       '@nhost/nhost-js':
-        specifier: 3.0.1
-        version: 3.0.1(graphql@16.8.1)
+        specifier: 3.0.2
+        version: 3.0.2(graphql@16.8.1)
       '@react-email/components':
         specifier: 0.0.14
         version: 0.0.14(@types/react@18.2.5)(react@18.2.0)
@@ -166,8 +166,8 @@ importers:
         specifier: 0.9.4
         version: 0.9.4
       '@nhost/nhost-js':
-        specifier: 3.0.1
-        version: 3.0.1(graphql@16.8.1)
+        specifier: 3.0.2
+        version: 3.0.2(graphql@16.8.1)
       axios:
         specifier: 1.6.5
         version: 1.6.5
@@ -269,8 +269,8 @@ importers:
         specifier: ^2.0.0
         version: 2.0.0
       lucide-react:
-        specifier: ^0.312.0
-        version: 0.312.0(react@18.2.0)
+        specifier: ^0.314.0
+        version: 0.314.0(react@18.2.0)
       next-themes:
         specifier: ^0.2.1
         version: 0.2.1(next@14.1.0)(react-dom@18.2.0)(react@18.2.0)
@@ -2288,8 +2288,8 @@ packages:
       - debug
     dev: false
 
-  /@nhost/graphql-js@0.1.4(graphql@16.8.1):
-    resolution: {integrity: sha512-IPHuGOf4iQrFsxG7Rh5jCCZzPCN9JkvldFww4Fz1lCVi9ZQNEaGaawIP5gBuBHeYIuALeaK1wVYKPc7vJ/euCA==}
+  /@nhost/graphql-js@0.1.5(graphql@16.8.1):
+    resolution: {integrity: sha512-YvEwYNe+SZEsarPSQs7xMI4mXbkfDM1iRE2Nxe1+LC1Jlj33lD3eJA0UJZhF50rkBiNrbX2chx+c64K4OPnBxA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -2300,8 +2300,8 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/hasura-auth-js@2.1.10:
-    resolution: {integrity: sha512-4tyNg39TwL+JAxdwCLFYk/pRX0QbvjJ88Z2693pib53nqzr8DPnVSj7GRCao3/2E42n0DntLOmZa/FLD4haPqQ==}
+  /@nhost/hasura-auth-js@2.1.11:
+    resolution: {integrity: sha512-nuhOpVau3PyvQBdd5dKM6oen8f6V0Mgldrtd/4Frqcx9mY13f0gXk9MqDbLnInE4JbwStuDUutxzKA2ZwYwqXA==}
     dependencies:
       '@simplewebauthn/browser': 6.2.2
       fetch-ponyfill: 7.1.0
@@ -2312,24 +2312,25 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/hasura-storage-js@2.2.5:
-    resolution: {integrity: sha512-IW0IwHlvuo9PxVQTXoQUE8LOpuOnjp+XlqgAKeatg1rY0MjJokcm4Xd0yLInAXfYBkK0r9pdKz7+RW+GDiYQ5g==}
+  /@nhost/hasura-storage-js@2.2.6:
+    resolution: {integrity: sha512-0s2T8iwJHChopwZhL/nbJJwRlKeyBOpjo4H+mJXL7D/wqPLdeFMhgacfA/rhePQ1SXPUwkXIgXzcwxt5SYLghA==}
     dependencies:
       fetch-ponyfill: 7.1.0
       form-data: 4.0.0
+      graphql: 16.8.1
       xstate: 4.38.3
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@nhost/nhost-js@3.0.1(graphql@16.8.1):
-    resolution: {integrity: sha512-i7YqnHin0V0sbTzH3aAA+JEnEcOTL6bECijdeNfNVjWrkqrL1t5INwEy8ftjfw3tREwGzxlNE/VtP+DvNfKJag==}
+  /@nhost/nhost-js@3.0.2(graphql@16.8.1):
+    resolution: {integrity: sha512-kwnzyKoTPGY+D/yMQl+huiVAPSVfo14TgNgX/Uu2pyATwDs1JDNuGZoqToWKS8D7zIw9oXUqagtrBFRlFYPvSw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@nhost/graphql-js': 0.1.4(graphql@16.8.1)
-      '@nhost/hasura-auth-js': 2.1.10
-      '@nhost/hasura-storage-js': 2.2.5
+      '@nhost/graphql-js': 0.1.5(graphql@16.8.1)
+      '@nhost/hasura-auth-js': 2.1.11
+      '@nhost/hasura-storage-js': 2.2.6
       graphql: 16.8.1
       isomorphic-unfetch: 3.1.0
     transitivePeerDependencies:
@@ -8362,8 +8363,8 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lucide-react@0.312.0(react@18.2.0):
-    resolution: {integrity: sha512-3UZsqyswRXjW4t+nw+InICewSimjPKHuSxiFYqTshv9xkK3tPPntXk/lvXc9pKlXIxm3v9WKyoxcrB6YHhP+dg==}
+  /lucide-react@0.314.0(react@18.2.0):
+    resolution: {integrity: sha512-c2zOW7TOyKxPCaSs1og2lFdoI3SR4iii3yrZJU2Zpdc78nOw4fUmrcFNultaCiwZcr4CyiKdzjMdvKNlBBk+UQ==}
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:

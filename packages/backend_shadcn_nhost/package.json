@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@nhost/core": "0.9.4",
-    "@nhost/nhost-js": "3.0.1",
+    "@nhost/nhost-js": "3.0.2",
     "axios": "1.6.5",
     "dayjs": "1.11.10",
     "graphql": "16.8.1",
