@@ -53,6 +53,12 @@ export function UserNav({ userData }: { userData: User }) {
               <span>Onesignal test</span>
             </Link>
           </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/dashboard/email" scroll>
+              <Icons.email className="mr-2 h-4 w-4" />
+              <span>Email test</span>
+            </Link>
+          </DropdownMenuItem>
           {/* <DropdownMenuItem asChild>
             <Link href="/dashboard/settings" scroll>
               <BellRing className="mr-2 h-4 w-4" />

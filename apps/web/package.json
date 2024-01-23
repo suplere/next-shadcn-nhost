@@ -11,6 +11,7 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.3",
     "@nhost/nhost-js": "3.0.1",
+    "@react-email/components": "0.0.14",
     "@serwist/next": "^8.4.3",
     "@serwist/precaching": "^8.4.3",
     "@serwist/sw": "^8.4.3",
@@ -37,6 +38,7 @@
     "eslint-config-custom": "workspace:^",
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
+    "transactional": "workspace:*",
     "tsconfig": "workspace:*",
     "typescript": "^5.0.0"
   }
