@@ -5,12 +5,17 @@ import { DEFAULT_COOKIE_OPTIONS } from '@/utils/constants'
 import { utoa } from '@/utils/string'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
+import { zfd } from "zod-form-data";
+
+const schema = zfd.formData({
+  email: zfd.text(),
+  password: zfd.text(),
+});
 
 export const signIn = async (formData: FormData) => {
   const nhost = await getNhost()
 
-  const email = formData.get('email').toString()
-  const password = formData.get('password').toString()
+  const { email, password } = schema.parse(formData)
 
   const { session, error } = await nhost.auth.signIn({ email, password })
 

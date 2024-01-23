@@ -66,7 +66,7 @@ export const OneSignalProvider = (props: {
           // OneSignal.login('rodrigo')
           // OneSignal.User.addAlias('myAlias', '1')
           setIsInit(true);
-          setIsOptIn(OneSignal.User.PushSubscription.optedIn);
+          setIsOptIn(OneSignal.User.PushSubscription.optedIn || false);
           OneSignal.User.PushSubscription.addEventListener("change", pushSubscriptionChangeListener);
         });
       } catch (e) {

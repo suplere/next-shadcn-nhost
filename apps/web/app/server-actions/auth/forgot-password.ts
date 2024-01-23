@@ -2,11 +2,16 @@
 
 import { getNhost } from '@/lib/nhost/nhost'
 import { redirect } from 'next/navigation'
+import { zfd } from "zod-form-data";
+
+const schema = zfd.formData({
+  email: zfd.text(),
+});
 
 export const forgotPassword = async (form: FormData) => {
   const nhost = await getNhost()
 
-  const email = form.get("email").toString()
+  const { email } = schema.parse(form)
 
   const {error} = await nhost.auth.resetPassword({
     email,

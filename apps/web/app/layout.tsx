@@ -2,18 +2,13 @@ import "ui/styles/globals.css";
 import { Toaster } from "@ui/components/ui/sonner";
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
-import { Inter as FontSans } from "next/font/google";
+import { fontSans } from "./font";
 import { cn } from "@ui/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import { siteConfig } from "@/config/site";
 import { OneSignalProvider } from "./onesignal";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   applicationName: siteConfig.name,
