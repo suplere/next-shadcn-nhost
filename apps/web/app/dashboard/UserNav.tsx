@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { User } from "@nhost/nhost-js";
 import {
   DropdownMenu,
@@ -12,18 +12,22 @@ import {
 import { Button } from "@ui/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@ui/components/ui/avatar";
 import Link from "next/link";
-import { Icons } from "@ui/components/icons"
+import { Icons } from "@ui/components/icons";
 import { signOut } from "../server-actions/auth";
+import { UserMetatdata } from "@/types";
 
 export function UserNav({ userData }: { userData: User }) {
+  const metadata = userData.metadata as UserMetatdata;
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="ghost" className="relative h-8 w-8 rounded-full">
           <Avatar className="h-8 w-8">
             <AvatarImage src={userData.avatarUrl} alt="avatar" />
-            <AvatarFallback>{`${userData.displayName[0]}${
-              userData.displayName.split(" ")[1][0]
+            <AvatarFallback>{`${
+              metadata.firstname ? metadata.firstname[0] : "J"
+            }${
+              metadata.lastname ? metadata.lastname[0] : "P"
             }`}</AvatarFallback>
           </Avatar>
         </Button>
