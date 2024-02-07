@@ -1,4 +1,4 @@
-export type UserMetatdata = {
+export type UserMetadata = {
   firstname: string
   lastname: string
   mobile: string

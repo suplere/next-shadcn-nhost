@@ -2,6 +2,8 @@ import { ModeToggle } from "@/components/mode-toggle";
 import { getNhost } from "@/lib/nhost/nhost";
 import { redirect } from "next/navigation";
 import { UserNav } from "./UserNav";
+import { NotificationCentre } from "@/components/notification-centre";
+import { UserMetadata } from "@/types";
 
 export default async function DashbboardLayout({
   children,
@@ -14,6 +16,8 @@ export default async function DashbboardLayout({
     redirect("/login");
   }
 
+  const metadata = session.user.metadata as UserMetadata;
+
   return (
     <div className="h-full bg-gray-100 dark:bg-gray-900">
       <div className="flex flex-1 flex-col">
@@ -22,12 +26,19 @@ export default async function DashbboardLayout({
             {/* <MainNav userData={userData!} className="mx-6" /> */}
             <div className="ml-auto flex items-center space-x-4">
               <ModeToggle />
-              <UserNav userData={session.user} />
+              <NotificationCentre userId={session.user.id} />
+              <UserNav
+                displayName={session.user.displayName}
+                avatarUrl={session.user.avatarUrl}
+                email={session.user.email as string}
+                firstname={metadata.firstname}
+                lastname={metadata.lastname}
+              />
             </div>
           </div>
         </div>
 
-        <main className="bg-gray-100 dark:bg-gray-900">{children}</main>
+        <main className="bg-gray-100 dark:bg-gray-900 px-2">{children}</main>
       </div>
     </div>
   );

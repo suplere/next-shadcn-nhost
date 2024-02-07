@@ -1,7 +1,7 @@
 "use server";
 
 import { NHOST_SESSION_KEY, getNhost } from "@/lib/nhost/nhost";
-import { UserMetatdata } from "@/types";
+import { UserMetadata } from "@/types";
 import { DEFAULT_COOKIE_OPTIONS } from "@/utils/constants";
 import { utoa } from "@/utils/string";
 import { cookies } from "next/headers";
@@ -22,7 +22,7 @@ export const signUp = async (formData: FormData) => {
   const { firstName, lastName, email, password, mobile } =
     schema.parse(formData);
 
-  const metadata: UserMetatdata = {
+  const metadata: UserMetadata = {
     firstname: firstName,
     lastname: lastName,
     mobile: mobile,

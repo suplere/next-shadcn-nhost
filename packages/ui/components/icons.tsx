@@ -1,4 +1,4 @@
-import { BellRing, Command, LogOut, Mail, Moon, SunMedium, UserCog } from "lucide-react";
+import { BellRing, Command, Home, LogOut, Mail, Moon, SunMedium, UserCog } from "lucide-react";
 
 export type IconKeys = keyof typeof icons;
 
@@ -13,7 +13,8 @@ const icons = {
   profile: UserCog,
   logout: LogOut,
   onesignal: BellRing,
-  email: Mail
+  email: Mail,
+  dashboard: Home
 };
 
 export const Icons: IconsType = icons;

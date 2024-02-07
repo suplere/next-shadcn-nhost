@@ -1,6 +1,6 @@
 import { ProfileForm } from "./ProfileForm";
 import { getNhost } from "@/lib/nhost/nhost";
-import { UserMetatdata } from "@/types";
+import { UserMetadata } from "@/types";
 import { redirect } from "next/navigation";
 
 const Profile = async () => {
@@ -10,10 +10,10 @@ const Profile = async () => {
     redirect("/sign-in");
   }
   const { firstname, lastname, mobile } = session.user
-    .metadata as UserMetatdata;
+    .metadata as UserMetadata;
   return (
-    <div className="flex flex-col max-w-3xl mx-auto space-y-4 mx-4">
-      <h2 className="text-xl">Profil</h2>
+    <div className="flex flex-col max-w-3xl mx-auto space-y-4">
+
       <ProfileForm
         accountCreated={session.user.createdAt}
         id={session.user.id}

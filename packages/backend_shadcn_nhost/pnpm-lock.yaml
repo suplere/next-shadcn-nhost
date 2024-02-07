@@ -9,8 +9,8 @@ dependencies:
     specifier: 0.9.4
     version: 0.9.4
   '@nhost/nhost-js':
-    specifier: 3.0.1
-    version: 3.0.1(graphql@16.8.1)
+    specifier: 3.0.2
+    version: 3.0.2(graphql@16.8.1)
   axios:
     specifier: 1.6.5
     version: 1.6.5
@@ -206,8 +206,8 @@ packages:
       - debug
     dev: false
 
-  /@nhost/graphql-js@0.1.4(graphql@16.8.1):
-    resolution: {integrity: sha512-IPHuGOf4iQrFsxG7Rh5jCCZzPCN9JkvldFww4Fz1lCVi9ZQNEaGaawIP5gBuBHeYIuALeaK1wVYKPc7vJ/euCA==}
+  /@nhost/graphql-js@0.1.5(graphql@16.8.1):
+    resolution: {integrity: sha512-YvEwYNe+SZEsarPSQs7xMI4mXbkfDM1iRE2Nxe1+LC1Jlj33lD3eJA0UJZhF50rkBiNrbX2chx+c64K4OPnBxA==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -218,36 +218,37 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/hasura-auth-js@2.1.10:
-    resolution: {integrity: sha512-4tyNg39TwL+JAxdwCLFYk/pRX0QbvjJ88Z2693pib53nqzr8DPnVSj7GRCao3/2E42n0DntLOmZa/FLD4haPqQ==}
+  /@nhost/hasura-auth-js@2.1.11:
+    resolution: {integrity: sha512-nuhOpVau3PyvQBdd5dKM6oen8f6V0Mgldrtd/4Frqcx9mY13f0gXk9MqDbLnInE4JbwStuDUutxzKA2ZwYwqXA==}
     dependencies:
       '@simplewebauthn/browser': 6.2.2
       fetch-ponyfill: 7.1.0
-      js-cookie: 3.0.1
+      js-cookie: 3.0.5
       jwt-decode: 3.1.2
-      xstate: 4.37.1
+      xstate: 4.38.3
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@nhost/hasura-storage-js@2.2.5:
-    resolution: {integrity: sha512-IW0IwHlvuo9PxVQTXoQUE8LOpuOnjp+XlqgAKeatg1rY0MjJokcm4Xd0yLInAXfYBkK0r9pdKz7+RW+GDiYQ5g==}
+  /@nhost/hasura-storage-js@2.2.6:
+    resolution: {integrity: sha512-0s2T8iwJHChopwZhL/nbJJwRlKeyBOpjo4H+mJXL7D/wqPLdeFMhgacfA/rhePQ1SXPUwkXIgXzcwxt5SYLghA==}
     dependencies:
       fetch-ponyfill: 7.1.0
       form-data: 4.0.0
-      xstate: 4.37.1
+      graphql: 16.8.1
+      xstate: 4.38.3
     transitivePeerDependencies:
       - encoding
     dev: false
 
-  /@nhost/nhost-js@3.0.1(graphql@16.8.1):
-    resolution: {integrity: sha512-i7YqnHin0V0sbTzH3aAA+JEnEcOTL6bECijdeNfNVjWrkqrL1t5INwEy8ftjfw3tREwGzxlNE/VtP+DvNfKJag==}
+  /@nhost/nhost-js@3.0.2(graphql@16.8.1):
+    resolution: {integrity: sha512-kwnzyKoTPGY+D/yMQl+huiVAPSVfo14TgNgX/Uu2pyATwDs1JDNuGZoqToWKS8D7zIw9oXUqagtrBFRlFYPvSw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@nhost/graphql-js': 0.1.4(graphql@16.8.1)
-      '@nhost/hasura-auth-js': 2.1.10
-      '@nhost/hasura-storage-js': 2.2.5
+      '@nhost/graphql-js': 0.1.5(graphql@16.8.1)
+      '@nhost/hasura-auth-js': 2.1.11
+      '@nhost/hasura-storage-js': 2.2.6
       graphql: 16.8.1
       isomorphic-unfetch: 3.1.0
     transitivePeerDependencies:
@@ -1586,6 +1587,11 @@ packages:
     engines: {node: '>=12'}
     dev: false
 
+  /js-cookie@3.0.5:
+    resolution: {integrity: sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==}
+    engines: {node: '>=14'}
+    dev: false
+
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
     dev: true
@@ -2401,4 +2407,8 @@ packages:
 
   /xstate@4.37.1:
     resolution: {integrity: sha512-MuB7s01nV5vG2CzaBg2msXLGz7JuS+x/NBkQuZAwgEYCnWA8iQMiRz2VGxD3pcFjZAOih3fOgDD3kDaFInEx+g==}
+    dev: false
+
+  /xstate@4.38.3:
+    resolution: {integrity: sha512-SH7nAaaPQx57dx6qvfcIgqKRXIh4L0A1iYEqim4s1u7c9VoCgzZc+63FY90AKU4ZzOC2cfJzTnpO4zK7fCUzzw==}
     dev: false

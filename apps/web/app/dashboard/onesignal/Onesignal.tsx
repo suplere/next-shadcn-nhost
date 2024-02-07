@@ -1,31 +1,60 @@
 "use client";
-import { useState } from "react";
 import { useOneSignalContext } from "@/app/onesignal";
-import { User } from "@nhost/nhost-js";
 import { Button } from "@ui/components/ui/button";
 import { Switch } from "@ui/components/ui/switch";
 import { toast } from "sonner";
-import { Label } from "@ui/components/ui/label";
+import { setOneSignalIdToUser } from "@/app/server-actions/novu";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@ui/components/ui/card";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+} from "@ui/components/ui/form";
 
-export const OnesignalTest = ({ user }: { user: User }) => {
+const schema = z.object({
+  notifyApproved: z.boolean(),
+});
+
+export const OnesignalTest = ({ userId }: { userId: string }) => {
   const { isInit, oneSignal, isOptIn } = useOneSignalContext();
-  const [notifyApproved, setNotifyApproved] = useState<boolean>(isOptIn);
 
   if (!isInit) return null;
 
-  const approveOpt = async () => {
+  const form = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      notifyApproved: isOptIn,
+    },
+  });
+
+  const approveOpt = async (data: z.infer<typeof schema>) => {
     const permission = oneSignal.Notifications.permission;
-    console.log(permission);
+    const subscriptionId = oneSignal.User.PushSubscription.id;
+    if (subscriptionId && data.notifyApproved)
+      setOneSignalIdToUser(subscriptionId);
     if (!permission) {
-      await oneSignal.Slidedown.promptPush()
+      await oneSignal.Slidedown.promptPush();
     }
     try {
-      if (isInit && notifyApproved) {
-        await oneSignal.login(user.id);
+      if (isInit && data.notifyApproved) {
+        await oneSignal.login(userId);
         await oneSignal.User.PushSubscription.optIn();
         toast.success("Povolení webpush oznámení bylo provedeno.");
       }
-      if (isInit && !notifyApproved) {
+      if (isInit && !data.notifyApproved) {
         await oneSignal.logout();
         await oneSignal.User.PushSubscription.optOut();
         toast.success("Bylo provedeno odhlášení odběru webpush notifikací.");
@@ -34,38 +63,44 @@ export const OnesignalTest = ({ user }: { user: User }) => {
   };
 
   return (
-    <div>
-      <div className="bg-white dark:bg-black px-4 py-6 sm:p-6">
-        <div>
-          <h3
-            id="notification-settings"
-            className="text-lg font-medium leading-6 text-gray-900 dark:text-gray-100"
-          >
-            Oznámení
-          </h3>
-          <p className="mt-1 text-sm text-gray-500">
-            Nastavení pro zasílání oznámení .....
-          </p>
-        </div>
-        <div className="mt-6">
-          <div className="flex flex-row items-center justify-between p-2">
-            <div className="space-y-0.5">
-              <Label className="text-sm">Webové notifikace povoleny?</Label>
-            </div>
-            <div>
-              <Switch
-                checked={notifyApproved}
-                onCheckedChange={setNotifyApproved}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="bg-gray-50 dark:bg-black px-4 py-3 text-right sm:px-6">
-        <Button type="button" onClick={approveOpt}>
-          Potvrdit
-        </Button>
-      </div>
-    </div>
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(approveOpt)}>
+        <Card>
+          <CardHeader>
+            <CardTitle>Oznámení</CardTitle>
+            <CardDescription>
+              Nastavení pro zasílání oznámení .....
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <FormField
+              control={form.control}
+              name="notifyApproved"
+              render={({ field }) => (
+                <FormItem className="flex flex-row items-center justify-between py-4">
+                  <div className="space-y-0.5">
+                    <FormLabel className="text-base">
+                      Webové notifikace povoleny?
+                    </FormLabel>
+                    <FormDescription>
+                      Nutné pro možnost zasílání webových oznámení.
+                    </FormDescription>
+                  </div>
+                  <FormControl>
+                    <Switch
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                    />
+                  </FormControl>
+                </FormItem>
+              )}
+            />
+          </CardContent>
+          <CardFooter className="flex-row-reverse gap-2">
+            <Button type="submit">Potvrdit</Button>
+          </CardFooter>
+        </Card>
+      </form>
+    </Form>
   );
 };
