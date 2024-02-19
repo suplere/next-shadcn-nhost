@@ -31,14 +31,14 @@ const schema = z.object({
 export const OnesignalTest = ({ userId }: { userId: string }) => {
   const { isInit, oneSignal, isOptIn } = useOneSignalContext();
 
-  if (!isInit) return null;
-
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
     defaultValues: {
       notifyApproved: isOptIn,
     },
   });
+
+  if (!isInit) return null;
 
   const approveOpt = async (data: z.infer<typeof schema>) => {
     const permission = oneSignal.Notifications.permission;
