@@ -9,11 +9,11 @@ dependencies:
     specifier: 0.9.4
     version: 0.9.4
   '@nhost/nhost-js':
-    specifier: 3.0.2
-    version: 3.0.2(graphql@16.8.1)
+    specifier: 3.0.5
+    version: 3.0.5(graphql@16.8.1)
   axios:
-    specifier: 1.6.5
-    version: 1.6.5
+    specifier: 1.6.7
+    version: 1.6.7
   dayjs:
     specifier: 1.11.10
     version: 1.11.10
@@ -27,16 +27,16 @@ dependencies:
     specifier: 2.12.6
     version: 2.12.6(graphql@16.8.1)
   jose:
-    specifier: 5.2.0
-    version: 5.2.0
+    specifier: 5.2.2
+    version: 5.2.2
 
 devDependencies:
   '@types/express':
     specifier: 4.17.21
     version: 4.17.21
   '@types/node':
-    specifier: 20.11.5
-    version: 20.11.5
+    specifier: 20.11.19
+    version: 20.11.19
   eslint-config-node:
     specifier: 4.1.0
     version: 4.1.0(eslint@6.8.0)
@@ -199,7 +199,7 @@ packages:
     resolution: {integrity: sha512-XqHc5RVh8AWyLSh+pTlEmCXZ3VQaV37xQYUrPzIdNCUNAHiBdvK4KboxGJiSkUz7hEvA4yqgp3ph7N9w8jZR3Q==}
     dependencies:
       '@simplewebauthn/browser': 6.2.2
-      axios: 1.6.5
+      axios: 1.6.7
       js-cookie: 3.0.1
       xstate: 4.37.1
     transitivePeerDependencies:
@@ -218,8 +218,8 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/hasura-auth-js@2.1.11:
-    resolution: {integrity: sha512-nuhOpVau3PyvQBdd5dKM6oen8f6V0Mgldrtd/4Frqcx9mY13f0gXk9MqDbLnInE4JbwStuDUutxzKA2ZwYwqXA==}
+  /@nhost/hasura-auth-js@2.3.0:
+    resolution: {integrity: sha512-NrmTAAgIU08A88g4239XWUF+yKuG/LNFpM5Me4//Ar/eLlCn45yvN3/It7YtipYsPNG7eykZMVjcKiKoiEFbbA==}
     dependencies:
       '@simplewebauthn/browser': 6.2.2
       fetch-ponyfill: 7.1.0
@@ -230,8 +230,8 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/hasura-storage-js@2.2.6:
-    resolution: {integrity: sha512-0s2T8iwJHChopwZhL/nbJJwRlKeyBOpjo4H+mJXL7D/wqPLdeFMhgacfA/rhePQ1SXPUwkXIgXzcwxt5SYLghA==}
+  /@nhost/hasura-storage-js@2.4.0:
+    resolution: {integrity: sha512-iSOjiBWjxGRaZEyV1iJViDUVlQyhucBjyFZvSZxgQet1e4f4+lu3HCHPbi2CRMc0Os/BXX0AW/mzXMUwA0oC7A==}
     dependencies:
       fetch-ponyfill: 7.1.0
       form-data: 4.0.0
@@ -241,14 +241,14 @@ packages:
       - encoding
     dev: false
 
-  /@nhost/nhost-js@3.0.2(graphql@16.8.1):
-    resolution: {integrity: sha512-kwnzyKoTPGY+D/yMQl+huiVAPSVfo14TgNgX/Uu2pyATwDs1JDNuGZoqToWKS8D7zIw9oXUqagtrBFRlFYPvSw==}
+  /@nhost/nhost-js@3.0.5(graphql@16.8.1):
+    resolution: {integrity: sha512-JVNlNJRc8vnS+gBFyCCoZcmalT279kiYv9TvUp04SblS3gDGXHNQ85VviGqeqT0wMEJq4KVbJ6lCPoneTDZn1g==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
       '@nhost/graphql-js': 0.1.5(graphql@16.8.1)
-      '@nhost/hasura-auth-js': 2.1.11
-      '@nhost/hasura-storage-js': 2.2.6
+      '@nhost/hasura-auth-js': 2.3.0
+      '@nhost/hasura-storage-js': 2.4.0
       graphql: 16.8.1
       isomorphic-unfetch: 3.1.0
     transitivePeerDependencies:
@@ -263,19 +263,19 @@ packages:
     resolution: {integrity: sha512-ALYone6pm6QmwZoAgeyNksccT9Q4AWZQ6PvfwR37GT6r6FWUPguq6sUmNGSMV2Wr761oQoBxwGGa6DR5o1DC9g==}
     dependencies:
       '@types/connect': 3.4.35
-      '@types/node': 20.11.5
+      '@types/node': 20.11.19
     dev: true
 
   /@types/connect@3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
-      '@types/node': 20.11.5
+      '@types/node': 20.11.19
     dev: true
 
   /@types/express-serve-static-core@4.17.33:
     resolution: {integrity: sha512-TPBqmR/HRYI3eC2E5hmiivIzv+bidAfXofM+sbonAGvyDhySGw9/PQZFt2BLOrjUUR++4eJVpx6KnLQK1Fk9tA==}
     dependencies:
-      '@types/node': 20.11.5
+      '@types/node': 20.11.19
       '@types/qs': 6.9.7
       '@types/range-parser': 1.2.4
     dev: true
@@ -297,8 +297,8 @@ packages:
     resolution: {integrity: sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA==}
     dev: true
 
-  /@types/node@20.11.5:
-    resolution: {integrity: sha512-g557vgQjUUfN76MZAN/dt1z3dzcUsimuysco0KeluHgrPdJXkP/XdAURgyO2W9fZWHRtRBiVKzKn8vyOAwlG+w==}
+  /@types/node@20.11.19:
+    resolution: {integrity: sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==}
     dependencies:
       undici-types: 5.26.5
     dev: true
@@ -315,7 +315,7 @@ packages:
     resolution: {integrity: sha512-NUo5XNiAdULrJENtJXZZ3fHtfMolzZwczzBbnAeBbqBwG+LaG6YaJtuwzwGSQZ2wsCrxjEhNNjAkKigy3n8teQ==}
     dependencies:
       '@types/mime': 3.0.1
-      '@types/node': 20.11.5
+      '@types/node': 20.11.19
     dev: true
 
   /accepts@1.3.8:
@@ -466,8 +466,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /axios@1.6.5:
-    resolution: {integrity: sha512-Ii012v05KEVuUoFWmMW/UQv9aRIc3ZwkWDcM+h5Il8izZCtRVpDUfwpoFf7eOtajT3QiGR4yDUx7lPqHJULgbg==}
+  /axios@1.6.7:
+    resolution: {integrity: sha512-/hDJGff6/c7u0hDkvkGxR/oy6CbCs8ziCsC7SqmhjfozqiJGc8Z11wrv9z9lYfY4K8l+H9TpjcMDX0xOZmx+RA==}
     dependencies:
       follow-redirects: 1.15.5
       form-data: 4.0.0
@@ -1578,8 +1578,8 @@ packages:
       - encoding
     dev: false
 
-  /jose@5.2.0:
-    resolution: {integrity: sha512-oW3PCnvyrcm1HMvGTzqjxxfnEs9EoFOFWi2HsEGhlFVOXxTE3K9GKWVMFoFw06yPUqwpvEWic1BmtUZBI/tIjw==}
+  /jose@5.2.2:
+    resolution: {integrity: sha512-/WByRr4jDcsKlvMd1dRJnPfS1GVO3WuKyaurJ/vvXcOaUQO8rnNObCQMlv/5uCceVQIq5Q4WLF44ohsdiTohdg==}
     dev: false
 
   /js-cookie@3.0.1:
