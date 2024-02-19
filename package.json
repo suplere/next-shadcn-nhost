@@ -13,7 +13,7 @@
   "devDependencies": {
     "@turbo/gen": "^1.9.7",
     "eslint-config-custom": "workspace:*",
-    "@graphql-codegen/cli": "5.0.0",
+    "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/typescript": "^4.0.0",
     "@graphql-codegen/typescript-graphql-request": "^6.0.0",
     "@graphql-codegen/typescript-operations": "^4.0.0",
