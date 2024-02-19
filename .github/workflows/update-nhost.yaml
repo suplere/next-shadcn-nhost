@@ -10,10 +10,10 @@ jobs:
       - name: Install Hasura CLI
         run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
       - name: Apply hasura migration
-        working-directory: backend/nhost
+        working-directory: packages/backend_shadcn_nhost/nhost
         run: |
           hasura migrate apply --all-databases --skip-update-check --endpoint '${{ secrets.HASURA_ENDPOINT }}' --admin-secret '${{ secrets.HASURA_ADMIN_SECRET }}'
       - name: Apply hasura metadata
-        working-directory: backend/nhost
+        working-directory: packages/backend_shadcn_nhost/nhost
         run: |
           hasura metadata apply --skip-update-check --endpoint '${{ secrets.HASURA_ENDPOINT }}' --admin-secret '${{ secrets.HASURA_ADMIN_SECRET }}'
