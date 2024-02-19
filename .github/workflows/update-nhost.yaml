@@ -1,0 +1,11 @@
+name: Hasura migration
+on: workflow_dispatch
+jobs:
+  hasura_migration:
+    name: Hasura migration
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+      - name: Install Hasura CLI
+        run: curl -L https://github.com/hasura/graphql-engine/raw/stable/cli/get.sh | bash
