@@ -4,13 +4,17 @@ import { z } from "zod"
 export const env = createEnv({
   client: {
     NEXT_PUBLIC_APP_URL: z.string().min(1),
-    NEXT_PUBLIC_NHOST_SUBDOMAIN: z.string().min(1),
+    NEXT_PUBLIC_NHOST_SUBDOMAIN: z.string(),
     NEXT_PUBLIC_NHOST_REGION: z.string(),
     NEXT_PUBLIC_NHOST_ONESEGNAL_APP_ID: z.string(),
     NEXT_PUBLIC_NHOST_ONESEGNAL_SAFARI_ID: z.string(),
     NEXT_PUBLIC_NOVU_APP_ID: z.string().min(1),
     NEXT_PUBLIC_NOVU_BACKEND_URL: z.string().min(1),
-    NEXT_PUBLIC_NOVU_SOCKET_URL: z.string().min(1)
+    NEXT_PUBLIC_NOVU_SOCKET_URL: z.string().min(1),
+    NEXT_PUBLIC_AUTH_URL: z.string(),
+    NEXT_PUBLIC_GRAPHQL_URL: z.string(),
+    NEXT_PUBLIC_STORAGE_URL: z.string(),
+    NEXT_PUBLIC_FUNCTION_URL: z.string()
   },
   server: {
     NOVU_API_KEY: z.string().min(1),
@@ -24,7 +28,11 @@ export const env = createEnv({
     NEXT_PUBLIC_NHOST_SUBDOMAIN: process.env.NEXT_PUBLIC_NHOST_SUBDOMAIN,
     NEXT_PUBLIC_NHOST_REGION: process.env.NEXT_PUBLIC_NHOST_REGION,
     NEXT_PUBLIC_NHOST_ONESEGNAL_APP_ID: process.env.NEXT_PUBLIC_NHOST_ONESEGNAL_APP_ID,
-    NEXT_PUBLIC_NHOST_ONESEGNAL_SAFARI_ID: process.env.NEXT_PUBLIC_NHOST_ONESEGNAL_SAFARI_ID
+    NEXT_PUBLIC_NHOST_ONESEGNAL_SAFARI_ID: process.env.NEXT_PUBLIC_NHOST_ONESEGNAL_SAFARI_ID,
+    NEXT_PUBLIC_AUTH_URL: process.env.NEXT_PUBLIC_AUTH_URL,
+    NEXT_PUBLIC_GRAPHQL_URL: process.env.NEXT_PUBLIC_GRAPHQL_URL,
+    NEXT_PUBLIC_STORAGE_URL: process.env.NEXT_PUBLIC_STORAGE_URL,
+    NEXT_PUBLIC_FUNCTION_URL: process.env.NEXT_PUBLIC_FUNCTION_URL,
   },
 
 })

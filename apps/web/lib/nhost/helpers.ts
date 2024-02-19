@@ -2,10 +2,10 @@
 import { env } from "@/env.mjs"
 import { NhostClientConstructorParams } from "@nhost/nhost-js"
 
-const AUTH_URL = null
-const GRAPHQL_URL = null
-const STORAGE_URL = null
-const FUNCTION_URL = null
+const AUTH_URL = env.NEXT_PUBLIC_AUTH_URL
+const GRAPHQL_URL = env.NEXT_PUBLIC_GRAPHQL_URL
+const STORAGE_URL = env.NEXT_PUBLIC_STORAGE_URL
+const FUNCTION_URL = env.NEXT_PUBLIC_FUNCTION_URL
 const SUBDOMAIN = env.NEXT_PUBLIC_NHOST_SUBDOMAIN
 const REGION = env.NEXT_PUBLIC_NHOST_REGION
 
