@@ -9,14 +9,14 @@
   },
   "devDependencies": {
     "@types/node": "20.11.25",
-    "@types/react": "18.2.0",
-    "@types/react-dom": "18.2.0",
+    "@types/react": "18.2.64",
+    "@types/react-dom": "18.2.21",
     "autoprefixer": "10.4.18",
     "eslint": "8.57.0",
     "eslint-config-custom": "workspace:*",
     "postcss": "8.4.35",
     "prettier": "3.2.5",
-    "react": "18.0.0",
+    "react": "18.2.0",
     "tailwindcss": "3.4.1",
     "tsconfig": "workspace:*",
     "typescript": "5.4.2"
