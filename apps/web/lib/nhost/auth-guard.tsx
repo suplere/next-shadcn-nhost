@@ -14,4 +14,6 @@ const withAuthAsync =
     return <Component {...props} />
   }
 
+withAuthAsync.displayName = 'withAuthAsync'
+
 export default withAuthAsync
