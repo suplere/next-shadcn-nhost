@@ -7,13 +7,14 @@ import {
   FieldPath,
   FieldValues,
   FormProvider,
+  FormProviderProps,
   useFormContext,
 } from "react-hook-form"
 
 import { cn } from "@ui/lib/utils"
 import { Label } from "@ui/components/ui/label"
 
-const Form = FormProvider
+const Form: React.ComponentType<FormProviderProps> = FormProvider
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
