@@ -1,5 +1,8 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": ["config:semverAllMonthly", "config:base"],
+  "docker-compose": {
+    "enabled": false
+  },
   "ignoreDeps": ["xstate"]
 }
