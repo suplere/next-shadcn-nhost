@@ -11,7 +11,7 @@
     "gen": "graphql-codegen"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
+    "@turbo/gen": "^2.0.0",
     "eslint-config-custom": "workspace:*",
     "@graphql-codegen/cli": "5.0.2",
     "@graphql-codegen/typescript": "^4.0.0",
@@ -20,7 +20,7 @@
     "@graphql-codegen/client-preset": "^4.0.1",
     "@parcel/watcher": "^2.3.0",
     "eslint": "8.57.0",
-    "eslint-plugin-turbo": "1.12.5",
+    "eslint-plugin-turbo": "2.2.3",
     "husky": "9.0.11",
     "lint-staged": "15.2.2",
     "prettier": "latest",
